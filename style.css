@@ -1,9 +1,15 @@
 :root {
-    --navy-normal: #1A2B4C;
-    --orange-brick: #D35400;
-    --white-pure: #FFFFFF;
-    --gray-light: #F5F5F5;
-    --gray-text: #333333;
+    --navy-normal: #201976;
+    --navy-dark: #180467;
+    --navy-light: #2b2986;
+
+    --orange-normal: #e18429;
+    --orange-dark: #d0750c;
+    --orange-light: #f2943d;
+
+    --white-normal: #f4ede8;
+    --white-dark: #e0d9d4;
+    --white-light: #FFFFFF;
 
     --font-main: 'Open Sans', sans-serif;
 }
