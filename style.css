@@ -13,3 +13,16 @@
 
     --font-main: 'Open Sans', sans-serif;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main), sans-serif;
+    color: var(--gray-text);
+    background-color: var(--white-pure);
+    line-height: 1.6;
+}
