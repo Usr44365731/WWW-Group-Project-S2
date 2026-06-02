@@ -30,7 +30,7 @@
         </div>
         <ul class="flex space-x-6 font-semibold">
             <li><button onclick="showView('home')" class="hover:text-gray-300 transition duration-200">Start</button></li>
-            <li><button onclick="showView('home')" class="hover:text-gray-300 transition duration-200">O akcji</button></li>
+            <li><button onclick="showView('about')" class="hover:text-gray-300 transition duration-200">O akcji</button></li>
             <li><button onclick="showView('catalog', 'all')" class="hover:text-gray-300 transition duration-200">Katalog usług</button></li>
             <li><a href="#footer" class="hover:text-gray-300 transition duration-200">Kontakt</a></li>
         </ul>
@@ -134,6 +134,58 @@
             </div>
 
         </section>
+    </div>
+
+    <div id="about-view" class="hidden">
+
+        <nav class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-wide" aria-label="Breadcrumb">
+            <ol class="list-none p-0 inline-flex items-center">
+                <li>
+                    <button onclick="showView('home')" class="hover:text-lodz-orange transition-colors">Strona Główna</button>
+                </li>
+                <li><span class="mx-2">></span></li>
+                <li><span class="text-lodz-navy">O Akcji</span></li>
+            </ol>
+        </nav>
+
+        <h2 class="text-3xl font-bold text-lodz-navy uppercase tracking-wide mb-6 border-b-2 border-gray-200 pb-4">Czym jest projekt "Fachowcy Szkołom"?</h2>
+
+        <div class="bg-white border border-gray-300 shadow-sm p-6 sm:p-10 mb-12">
+            <div class="text-lg text-gray-700 leading-relaxed space-y-6 font-medium">
+                <p>
+                    <strong class="text-lodz-navy text-xl">"Fachowcy Szkołom"</strong> to w 100% łódzka inicjatywa. Łączymy mistrzów rzemiosła, lokalnych przedsiębiorców oraz mieszkańców, aby wspólnie osiągnąć jeden, konkretny cel: wyposażyć łódzkie szkoły zawodowe i technika w nowoczesny, niezawodny sprzęt.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10">
+                    <div class="bg-gray-50 p-6 border-t-4 border-lodz-navy text-center shadow-sm">
+                        <span class="block text-4xl mb-3">🛠️</span>
+                        <h4 class="font-bold text-xl mb-2 text-gray-900 uppercase tracking-wide">1. Wybierasz usługę</h4>
+                        <p class="text-base text-gray-600">Przeglądasz katalog i kupujesz voucher na potrzebną Ci naprawę lub usługę.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 border-t-4 border-lodz-orange text-center shadow-sm">
+                        <span class="block text-4xl mb-3">🤝</span>
+                        <h4 class="font-bold text-xl mb-2 text-gray-900 uppercase tracking-wide">2. Fachowiec pracuje</h4>
+                        <p class="text-base text-gray-600">Mistrz w swoim fachu poświęca swój czas i wykonuje dla Ciebie solidną pracę.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 border-t-4 border-green-600 text-center shadow-sm">
+                        <span class="block text-4xl mb-3">📈</span>
+                        <h4 class="font-bold text-xl mb-2 text-gray-900 uppercase tracking-wide">3. Szkoła zyskuje</h4>
+                        <p class="text-base text-gray-600">100% twojej wpłaty trafia bezpośrednio na wyodrębnione konto na zakup sprzętu.</p>
+                    </div>
+                </div>
+
+                <p>
+                    Wierzymy, że solidne wykształcenie techniczne to podstawa silnej gospodarki w naszym regionie. Braki w wyposażeniu warsztatów szkolnych to problem, który możemy rozwiązać solidarnie. Nie pobieramy żadnych prowizji od transakcji. Każda zebrana złotówka jest w pełni transparentnie rozliczana, a faktury zakupowe będą publikowane na tej stronie.
+                </p>
+
+                <div class="bg-gray-100 p-6 mt-8 border-l-4 border-lodz-navy">
+                    <h3 class="text-xl font-bold text-lodz-navy mb-3 uppercase">Kto za tym stoi?</h3>
+                    <p class="text-base text-gray-700">
+                        Za bezpieczeństwo prawne, organizację zbiórki oraz stworzenie platformy odpowiada Fundacja "Budujemy Przyszłość Lokalnie" (KRS: 0000123456) we współpracy z autorami projektu technicznego: Kacprem Kuczyńskim, Jakubem Krajewskim oraz Szymonem Michalakiem. Gwarantujemy powagę i bezpieczeństwo na każdym kroku akcji.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="catalog-view" class="hidden">

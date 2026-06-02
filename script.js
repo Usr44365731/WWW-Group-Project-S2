@@ -14,6 +14,8 @@ function showView(viewId, category = 'all') {
     document.getElementById('home-view').classList.add('hidden');
     document.getElementById('catalog-view').classList.add('hidden');
 
+    document.getElementById('about-view').classList.add('hidden');
+
     document.getElementById(viewId + '-view').classList.remove('hidden');
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
