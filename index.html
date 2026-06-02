@@ -252,17 +252,19 @@
     </div>
 </footer>
 
-<div id="purchase-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50 px-4" onclick="handleBackdropClick(event)">
-    <div class="bg-white p-8 max-w-xl w-full border-t-4 border-lodz-orange shadow-2xl relative">
-        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-3xl font-bold leading-none">&times;</button>
+<div id="purchase-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50 p-4 sm:p-6" onclick="handleBackdropClick(event)">
+
+    <div class="bg-white p-6 sm:p-8 max-w-xl w-full max-h-[95vh] overflow-y-auto border-t-4 border-lodz-orange shadow-2xl relative flex flex-col">
+
+        <button onclick="closeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-900 text-3xl font-bold leading-none shadow-sm sm:shadow-none">&times;</button>
 
         <div id="purchase-form-container">
-            <h3 class="text-2xl font-bold text-lodz-navy mb-1 uppercase tracking-wide">Formularz Zgłoszeniowy</h3>
-            <p class="text-gray-700 text-base mb-6">Wypełnij dane, aby potwierdzić chęć wsparcia i zakupu usługi.</p>
+            <h3 class="text-xl sm:text-2xl font-bold text-lodz-navy mb-1 uppercase tracking-wide pr-6">Formularz Zgłoszeniowy</h3>
+            <p class="text-gray-700 text-sm sm:text-base mb-6">Wypełnij dane, aby potwierdzić chęć wsparcia i zakupu usługi.</p>
 
             <div class="bg-gray-100 p-4 mb-6 border-l-4 border-lodz-orange">
-                <p id="modal-service-name" class="font-bold text-gray-900 text-lg"></p>
-                <p id="modal-service-price" class="text-lodz-orange font-bold text-xl"></p>
+                <p id="modal-service-name" class="font-bold text-gray-900 text-base sm:text-lg"></p>
+                <p id="modal-service-price" class="text-lodz-orange font-bold text-lg sm:text-xl"></p>
             </div>
 
             <form id="purchase-form" onsubmit="submitForm(event)">
@@ -293,32 +295,32 @@
                     <label class="block text-sm font-bold text-gray-700 mb-3">Wybierz metodę płatności</label>
                     <div class="flex flex-col gap-3">
                         <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-300 hover:bg-gray-50 transition-colors">
-                            <input type="radio" name="payment" value="blik" required class="w-5 h-5 text-lodz-orange accent-lodz-orange">
-                            <span class="font-bold text-gray-900 text-base">BLIK (Szybka płatność mobilna)</span>
+                            <input type="radio" name="payment" value="blik" required class="w-5 h-5 text-lodz-orange accent-lodz-orange flex-shrink-0">
+                            <span class="font-bold text-gray-900 text-sm sm:text-base">BLIK (Szybka płatność mobilna)</span>
                         </label>
                         <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-300 hover:bg-gray-50 transition-colors">
-                            <input type="radio" name="payment" value="przelew" required class="w-5 h-5 text-lodz-orange accent-lodz-orange">
-                            <span class="font-bold text-gray-700 text-base">Tradycyjny przelew bankowy</span>
+                            <input type="radio" name="payment" value="przelew" required class="w-5 h-5 text-lodz-orange accent-lodz-orange flex-shrink-0">
+                            <span class="font-bold text-gray-700 text-sm sm:text-base">Tradycyjny przelew bankowy</span>
                         </label>
                         <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-300 hover:bg-gray-50 transition-colors">
-                            <input type="radio" name="payment" value="piknik" required class="w-5 h-5 text-lodz-orange accent-lodz-orange">
-                            <span class="font-bold text-gray-700 text-base">Płatność gotówką podczas Pikniku</span>
+                            <input type="radio" name="payment" value="piknik" required class="w-5 h-5 text-lodz-orange accent-lodz-orange flex-shrink-0">
+                            <span class="font-bold text-gray-700 text-sm sm:text-base">Płatność gotówką podczas Pikniku</span>
                         </label>
                     </div>
                 </div>
 
-                <div class="flex flex-col-reverse sm:flex-row gap-4">
+                <div class="flex flex-col-reverse sm:flex-row gap-4 mt-auto">
                     <button type="button" onclick="closeModal()" class="w-full sm:w-1/3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 transition-colors uppercase tracking-wide">Anuluj</button>
-                    <button type="submit" class="w-full sm:w-2/3 bg-lodz-orange hover:bg-[#c2410c] text-white font-bold py-4 px-4 transition-colors uppercase tracking-wide text-lg shadow-md">Potwierdzam zakup</button>
+                    <button type="submit" class="w-full sm:w-2/3 bg-lodz-orange hover:bg-[#c2410c] text-white font-bold py-4 px-4 transition-colors uppercase tracking-wide text-base sm:text-lg shadow-md">Potwierdzam zakup</button>
                 </div>
             </form>
         </div>
 
-        <div id="success-message" class="hidden text-center py-12">
-            <svg class="w-24 h-24 text-green-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <h3 class="text-3xl font-bold text-lodz-navy mb-4 uppercase">Dziękujemy!</h3>
-            <p class="text-gray-700 mb-8 text-lg font-medium">Twoje zgłoszenie zostało poprawnie zarejestrowane. Na podany adres e-mail wysłaliśmy dalsze instrukcje dotyczące płatności oraz voucher.</p>
-            <button type="button" onclick="closeModal()" class="bg-lodz-navy hover:bg-blue-800 text-white font-bold py-4 px-8 transition-colors uppercase tracking-wide w-full sm:w-auto shadow-md">Zamknij i wróć do strony</button>
+        <div id="success-message" class="hidden text-center py-8 sm:py-12 my-auto">
+            <svg class="w-20 h-20 sm:w-24 sm:h-24 text-green-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-2xl sm:text-3xl font-bold text-lodz-navy mb-4 uppercase">Dziękujemy!</h3>
+            <p class="text-gray-700 mb-8 text-base sm:text-lg font-medium">Twoje zgłoszenie zostało poprawnie zarejestrowane. Na podany adres e-mail wysłaliśmy dalsze instrukcje dotyczące płatności oraz voucher.</p>
+            <button type="button" onclick="closeModal()" class="bg-lodz-navy hover:bg-blue-800 text-white font-bold py-4 px-8 transition-colors uppercase tracking-wide w-full shadow-md">Zamknij</button>
         </div>
 
     </div>
