@@ -1,7 +1,38 @@
+:root {
+    --navy-normal: #201976;
+    --navy-dark: #180467;
+    --navy-light: #2b2986;
+
+    --orange-normal: #e18429;
+    --orange-dark: #d0750c;
+    --orange-light: #f2943d;
+
+    --white-normal: #F8F7F6;
+    --white-dark: #EEE7E2;
+    --white-light: #FCFBFB;
+
+    --gray-text: #333333;
+    --gray-border: #cccccc;
+
+    --font-main: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    padding-top: 55px;
     font-family: 'Inter', sans-serif;
     background-color: #f8fafc;
     color: #1e293b;
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
 }
 
 .bg-pattern {
@@ -26,6 +57,14 @@ body {
             transparent
     );
     background-size: 1rem 1rem;
+}
+
+.purchase-form {
+    z-index: 3;
+}
+
+.success-message {
+    z-index: 3;
 }
 
 @keyframes pulse-heart {

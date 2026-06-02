@@ -23,7 +23,7 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-<nav class="bg-lodz-navy bg-pattern text-white py-4 shadow-md">
+<nav class="bg-lodz-navy bg-pattern text-white py-4 shadow-md nav">
     <div class="container mx-auto px-4 flex justify-between items-center">
         <div class="text-2xl font-bold tracking-wider">
             <button onclick="showView('home')" class="hover:text-gray-200 uppercase">Fachowcy Szkołom</button>
@@ -317,7 +317,7 @@
             </div>
 
             <form id="purchase-form">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 purchase-form">
                     <div>
                         <label for="firstName" class="block text-sm font-bold text-gray-700 mb-1">Imię</label>
                         <input id="firstName" type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
@@ -365,7 +365,7 @@
             </form>
         </div>
 
-        <div id="success-message" class="hidden text-center py-8 sm:py-12 my-auto">
+        <div id="success-message" class="hidden text-center py-8 sm:py-12 my-auto success-message">
             <svg class="w-20 h-20 sm:w-24 sm:h-24 text-green-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <h3 class="text-2xl sm:text-3xl font-bold text-lodz-navy mb-4 uppercase">Dziękujemy!</h3>
             <p class="text-gray-700 mb-8 text-base sm:text-lg font-medium">Twoje zgłoszenie zostało poprawnie zarejestrowane. Na podany adres e-mail wysłaliśmy dalsze instrukcje dotyczące płatności oraz voucher.</p>
