@@ -45,10 +45,14 @@ function openModal(serviceName, price) {
     document.getElementById('purchase-form').reset();
 
     document.getElementById('purchase-modal').classList.remove('hidden');
+
+    document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
     document.getElementById('purchase-modal').classList.add('hidden');
+
+    document.body.style.overflow = '';
 }
 
 function handleBackdropClick(event) {
