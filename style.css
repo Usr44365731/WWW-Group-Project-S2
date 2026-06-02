@@ -3,11 +3,6 @@ body {
     background-color: #f8fafc;
     color: #1e293b;
 }
-.bg-lodz-navy { background-color: #1e3a8a; }
-.text-lodz-navy { color: #1e3a8a; }
-.bg-lodz-orange { background-color: #ea580c; }
-.text-lodz-orange { color: #ea580c; }
-.hover-bg-lodz-orange-dark:hover { background-color: #c2410c; }
 
 .bg-pattern {
     background-image: repeating-linear-gradient(

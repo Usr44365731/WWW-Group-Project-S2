@@ -18,10 +18,9 @@ function filterCatalog(category) {
         btn.classList.remove('bg-lodz-navy', 'text-white', 'active');
         btn.classList.add('bg-gray-200', 'text-gray-700');
 
-        const isAll = category === 'all' && btn.innerText === 'WSZYSTKIE';
-        const isMatch = btn.innerText.toUpperCase().includes(category.toUpperCase());
+        const btnCategory = btn.getAttribute('data-filter');
 
-        if (isAll || (category !== 'all' && isMatch)) {
+        if (btnCategory === category) {
             btn.classList.remove('bg-gray-200', 'text-gray-700');
             btn.classList.add('bg-lodz-navy', 'text-white', 'active');
         }
@@ -50,6 +49,12 @@ function openModal(serviceName, price) {
 
 function closeModal() {
     document.getElementById('purchase-modal').classList.add('hidden');
+}
+
+function handleBackdropClick(event) {
+    if (event.target.id === 'purchase-modal') {
+        closeModal();
+    }
 }
 
 function submitForm(event) {
