@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fachowcy Szkołom - Budujemy Przyszłość Lokalnie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lodz-navy': '#1e3a8a',
+                        'lodz-orange': '#ea580c',
+                        'lodz-orange-dark': '#c2410c'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col min-h-screen">
+
+<nav class="bg-lodz-navy bg-pattern text-white py-4 shadow-md">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-wider">
+            <a href="#" class="hover:text-gray-200">Fachowcy Szkołom</a>
+        </div>
+        <ul class="flex space-x-6 font-semibold">
+            <li><a href="#" onclick="showView('home')" class="hover:text-gray-300 transition duration-200">Start</a></li>
+            <li><a href="#" onclick="showView('home')" class="hover:text-gray-300 transition duration-200">O akcji</a></li>
+            <li><a href="#" onclick="showView('catalog', 'all')" class="hover:text-gray-300 transition duration-200">Katalog usług</a></li>
+            <li><a href="#footer" class="hover:text-gray-300 transition duration-200">Kontakt</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="flex-grow container mx-auto px-4 py-8">
+
+    <div id="home-view">
+        <section class="mb-12 bg-white p-6 border border-gray-200 shadow-sm">
+            <h2 class="text-xl font-bold mb-4 text-lodz-navy">Stan zbiórki: Sprzęt dla Łódzkich Szkół Zawodowych</h2>
+            <div class="w-full bg-gray-200 h-8 border border-gray-300 relative overflow-hidden">
+                <div class="bg-lodz-orange progress-stripes h-full flex items-center justify-center text-white font-bold text-sm transition-all duration-1000" style="width: 100%;">
+                    Mamy już 15 400 PLN! Zbieramy dalej!
+                </div>
+            </div>
+            <p class="text-sm font-bold uppercase tracking-wide text-lodz-orange mt-2 text-right">To zbiórka bez ograniczeń! Każda usługa to więcej sprzętu.</p>
+        </section>
+
+        <section class="mb-12">
+            <div class="w-full bg-white border border-gray-300 shadow-md p-8">
+                <h3 class="text-2xl font-bold mb-4 text-lodz-navy uppercase tracking-wide border-b-2 border-lodz-orange pb-2 inline-block">Dlaczego zbieramy? Solidarne wsparcie łódzkiej edukacji</h3>
+                <p class="text-gray-700 leading-relaxed mb-4 text-lg">
+                    Inicjatywa <strong>"Fachowcy Szkołom"</strong> to lokalna akcja charytatywna, w której mistrzowie swojego fachu z Łodzi oferują swoją ciężką pracę i umiejętności. Ty kupujesz potrzebną Ci usługę, a <strong>100% wpłaconych środków</strong> trafia na dedykowane konto zbiórki.
+                </p>
+                <p class="text-gray-700 leading-relaxed mb-4 text-lg">
+                    Naszym celem jest wyposażenie łódzkich techników i szkół zawodowych w nowoczesne narzędzia i maszyny. Wierzymy, że inwestycja w wykształcenie lokalnej młodzieży to gwarancja, że w przyszłości nasze domy i samochody będą w dobrych rękach.
+                </p>
+                <div class="bg-blue-50 border-l-4 border-lodz-navy p-4 mt-6">
+                    <p class="font-semibold text-lodz-navy">Finał akcji już wkrótce!</p>
+                    <p class="text-sm text-gray-600">Zapraszamy na Wielki Piknik Rzemieślniczy, podczas którego odbędą się wyjątkowe licytacje i pokazy umiejętności naszych fachowców. Szczegóły poniżej w sekcji licytacji.</p>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="text-2xl font-bold mb-6 text-lodz-navy uppercase tracking-wide border-t-2 border-gray-200 pt-8">Znajdź potrzebną usługę (Kategorie)</h3>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+            <button onclick="showView('catalog', 'Motoryzacja')" class="bg-white border-2 border-lodz-navy shadow-sm p-8 flex flex-col items-center justify-center hover:bg-lodz-navy hover:text-white transition-colors group cursor-pointer text-center">
+                <span class="text-2xl font-bold uppercase tracking-widest mb-2 text-lodz-navy group-hover:text-white">Motoryzacja</span>
+                <span class="text-sm text-gray-500 group-hover:text-gray-200">Przeglądy, wymiana opon, detailing, serwis</span>
+            </button>
+
+            <button onclick="showView('catalog', 'Remont')" class="bg-white border-2 border-lodz-navy shadow-sm p-8 flex flex-col items-center justify-center hover:bg-lodz-navy hover:text-white transition-colors group cursor-pointer text-center">
+                <span class="text-2xl font-bold uppercase tracking-widest mb-2 text-lodz-navy group-hover:text-white">Remont / Budowa</span>
+                <span class="text-sm text-gray-500 group-hover:text-gray-200">Malowanie, gładzie, układanie paneli, naprawy</span>
+            </button>
+
+            <button onclick="showView('catalog', 'Ogród')" class="bg-white border-2 border-lodz-navy shadow-sm p-8 flex flex-col items-center justify-center hover:bg-lodz-navy hover:text-white transition-colors group cursor-pointer text-center">
+                <span class="text-2xl font-bold uppercase tracking-widest mb-2 text-lodz-navy group-hover:text-white">Dom i Ogród</span>
+                <span class="text-sm text-gray-500 group-hover:text-gray-200">Pielęgnacja zieleni, sprzątanie, złota rączka</span>
+            </button>
+
+        </section>
+
+        <h3 class="text-2xl font-bold mb-6 text-lodz-navy uppercase tracking-wide border-t-2 border-gray-200 pt-8">Licytacje na żywo (Wielki Piknik)</h3>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+            <div class="bg-blue-50 border-2 border-lodz-navy shadow-sm flex flex-col relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-lodz-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
+                    Aukcja Główna
+                </div>
+                <div class="p-6 flex-grow border-b border-blue-100">
+                    <h4 class="text-xl font-bold mb-3 text-lodz-navy pr-24">Złota Rączka na cały dzień – Całkowita pomoc remontowa!</h4>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Brygada dwóch doświadczonych fachowców na pełne 8 godzin do Twojej dyspozycji! Usuną każdą usterkę, podłączą sprzęt AGD, zamontują szafki, naprawią hydraulikę lub elektrykę. Idealna opcja na nadrobienie zaległości remontowych w domu! Nie ma dla nas rzeczy niemożliwych.
+                    </p>
+                    <p class="text-sm font-semibold text-gray-800">Termin realizacji do ustalenia ze zwycięzcą licytacji.</p>
+                </div>
+                <div class="p-6 bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="block text-xs text-gray-500 uppercase tracking-wide">Cena wywoławcza</span>
+                        <span class="text-3xl font-bold text-gray-900">500 PLN</span>
+                    </div>
+                    <button onclick="openModal('Złota Rączka na cały dzień', '500 PLN (Cena wywoławcza)')" class="w-full sm:w-auto text-center bg-transparent border-2 border-lodz-navy text-lodz-navy hover:bg-lodz-navy hover:text-white font-bold py-3 px-6 transition duration-200 uppercase tracking-wide">
+                        Licytuj na Pikniku
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 border-2 border-lodz-navy shadow-sm flex flex-col relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-lodz-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
+                    Aukcja Specjalna
+                </div>
+                <div class="p-6 flex-grow border-b border-blue-100">
+                    <h4 class="text-xl font-bold mb-3 text-lodz-navy pr-24">Generalny przegląd dachu i rynien z naprawą</h4>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Certyfikowany mistrz dekarstwa dokona kompleksowego przeglądu dachu Twojego domu. Usługa obejmuje czyszczenie rynien, wymianę pękniętych dachówek, uszczelnienie komina oraz profesjonalny raport. Przygotuj dom na najcięższą zimę bez obaw o przecieki.
+                    </p>
+                    <p class="text-sm font-semibold text-gray-800">Usługa dostępna na terenie Łodzi i całego województwa.</p>
+                </div>
+                <div class="p-6 bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="block text-xs text-gray-500 uppercase tracking-wide">Cena wywoławcza</span>
+                        <span class="text-3xl font-bold text-gray-900">800 PLN</span>
+                    </div>
+                    <button onclick="openModal('Generalny przegląd dachu i rynien', '800 PLN (Cena wywoławcza)')" class="w-full sm:w-auto text-center bg-transparent border-2 border-lodz-navy text-lodz-navy hover:bg-lodz-navy hover:text-white font-bold py-3 px-6 transition duration-200 uppercase tracking-wide">
+                        Licytuj na Pikniku
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <div id="catalog-view" class="hidden">
+
+        <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-b-2 border-gray-200 pb-4">
+            <div>
+                <h2 class="text-3xl font-bold text-lodz-navy uppercase tracking-wide mb-2">Katalog usług</h2>
+                <p class="text-gray-600">Wybierz usługę, kup voucher, a 100% kwoty trafi na wyposażenie szkół.</p>
+            </div>
+
+            <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="filter-buttons">
+                <button onclick="filterCatalog('all')" class="filter-btn active bg-lodz-navy text-white px-4 py-2 font-bold text-sm uppercase transition-colors">Wszystkie</button>
+                <button onclick="filterCatalog('Motoryzacja')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 font-bold text-sm uppercase transition-colors">Motoryzacja</button>
+                <button onclick="filterCatalog('Remont')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 font-bold text-sm uppercase transition-colors">Remont</button>
+                <button onclick="filterCatalog('Ogród')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 font-bold text-sm uppercase transition-colors">Dom i Ogród</button>
+            </div>
+        </div>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+            <div data-category="Motoryzacja" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                <div class="p-4 flex-grow border-b border-gray-200">
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 mb-2 uppercase">Motoryzacja</span>
+                    <h4 class="text-lg font-bold mb-2 text-lodz-navy">Wymiana oleju i filtrów</h4>
+                    <p class="text-sm text-gray-600">Profesjonalna wymiana oleju silnikowego wraz ze wszystkimi filtrami bez względu na model pojazdu. Usługa realizowana w solidnym warsztacie na łódzkim Widzewie.</p>
+                </div>
+                <div class="p-4 bg-gray-50 flex items-center justify-between">
+                    <span class="text-xl font-bold text-gray-900">120 PLN</span>
+                    <button onclick="openModal('Wymiana oleju i filtrów', '120 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
+                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div data-category="Remont" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                <div class="p-4 flex-grow border-b border-gray-200">
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 mb-2 uppercase">Remont / Budowa</span>
+                    <h4 class="text-lg font-bold mb-2 text-lodz-navy">Kompleksowe malowanie pokoju</h4>
+                    <p class="text-sm text-gray-600">Przygotowanie ścian, gruntowanie i dwukrotne malowanie sufitu oraz ścian (bez ograniczeń metrażowych w obrębie jednego pomieszczenia). Pełne zabezpieczenie Twoich mebli.</p>
+                </div>
+                <div class="p-4 bg-gray-50 flex items-center justify-between">
+                    <span class="text-xl font-bold text-gray-900">400 PLN</span>
+                    <button onclick="openModal('Kompleksowe malowanie pokoju', '400 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
+                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div data-category="Ogród" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                <div class="p-4 flex-grow border-b border-gray-200">
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 mb-2 uppercase">Dom i Ogród</span>
+                    <h4 class="text-lg font-bold mb-2 text-lodz-navy">Prace porządkowe w ogrodzie</h4>
+                    <p class="text-sm text-gray-600">Pełne przygotowanie Twojego ogrodu do sezonu. Cięcie krzewów, formowanie koron drzew, koszenie i aeracja trawnika, wywóz zielonych odpadów. Zespół przyjeżdża z własnym profesjonalnym sprzętem.</p>
+                </div>
+                <div class="p-4 bg-gray-50 flex items-center justify-between">
+                    <span class="text-xl font-bold text-gray-900">350 PLN</span>
+                    <button onclick="openModal('Prace porządkowe w ogrodzie', '350 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
+                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div data-category="Motoryzacja" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                <div class="p-4 flex-grow border-b border-gray-200">
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 mb-2 uppercase">Motoryzacja</span>
+                    <h4 class="text-lg font-bold mb-2 text-lodz-navy">Sezonowa wymiana opon</h4>
+                    <p class="text-sm text-gray-600">Zrzucenie starych opon, założenie nowych (niezależnie od rozmiaru i rodzaju felgi), komputerowe wyważenie kół i montaż na aucie. Zero kolejek, obsługa VIP.</p>
+                </div>
+                <div class="p-4 bg-gray-50 flex items-center justify-between">
+                    <span class="text-xl font-bold text-gray-900">100 PLN</span>
+                    <button onclick="openModal('Sezonowa wymiana opon', '100 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
+                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div data-category="Motoryzacja" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                <div class="p-4 flex-grow border-b border-gray-200">
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 mb-2 uppercase">Motoryzacja</span>
+                    <h4 class="text-lg font-bold mb-2 text-lodz-navy">Pełen detailing wnętrza</h4>
+                    <p class="text-sm text-gray-600">Kompleksowe pranie całej tapicerki, podsufitki i dywaników. Dokładne czyszczenie każdej szczeliny, nałożenie powłok ochronnych na plastiki. Twój samochód będzie pachniał jak prosto z salonu.</p>
+                </div>
+                <div class="p-4 bg-gray-50 flex items-center justify-between">
+                    <span class="text-xl font-bold text-gray-900">300 PLN</span>
+                    <button onclick="openModal('Pełen detailing wnętrza', '300 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
+                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div data-category="Motoryzacja" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                <div class="p-4 flex-grow border-b border-gray-200">
+                    <span class="inline-block bg-gray-200 text-gray-700 text-xs font-bold px-2 py-1 mb-2 uppercase">Motoryzacja</span>
+                    <h4 class="text-lg font-bold mb-2 text-lodz-navy">Rozszerzony przegląd auta</h4>
+                    <p class="text-sm text-gray-600">Diagnoza komputerowa, test amortyzatorów i hamulców, analiza spalin, weryfikacja zawieszenia na szarpakach. Dowiesz się wszystkiego o stanie technicznym swojego wozu od eksperta.</p>
+                </div>
+                <div class="p-4 bg-gray-50 flex items-center justify-between">
+                    <span class="text-xl font-bold text-gray-900">180 PLN</span>
+                    <button onclick="openModal('Rozszerzony przegląd auta', '180 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
+                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+</main>
+
+<footer id="footer" class="bg-lodz-navy bg-pattern text-white py-6 mt-12 border-t-4 border-lodz-orange">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+        <div class="mb-4 md:mb-0">
+            <span class="font-bold">Kontakt:</span> kontakt@fachowcyszkolom.lodz.pl | Tel: +48 123 456 789
+        </div>
+        <div>
+            <a href="#" class="hover:underline mr-4">Regulamin i KRS</a>
+            <a href="#" class="hover:underline mr-4">Polityka Prywatności</a>
+            <span class="text-gray-300">Autorzy: Kuczyński Kacper, Krajewski Jakub, Michalak Szymon</span>
+        </div>
+    </div>
+</footer>
+
+<div id="purchase-modal" class="fixed inset-0 bg-black bg-opacity-60 hidden flex items-center justify-center z-50 px-4">
+    <div class="bg-white p-8 max-w-lg w-full border-t-4 border-lodz-orange shadow-2xl relative">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl font-bold leading-none">&times;</button>
+
+        <div id="purchase-form-container">
+            <h3 class="text-2xl font-bold text-lodz-navy mb-1 uppercase tracking-wide">Formularz Zgłoszeniowy</h3>
+            <p class="text-gray-600 text-sm mb-4">Wypełnij dane, aby potwierdzić chęć wsparcia i zakupu usługi.</p>
+
+            <div class="bg-gray-100 p-4 mb-6 border-l-4 border-lodz-orange">
+                <p id="modal-service-name" class="font-bold text-gray-800"></p>
+                <p id="modal-service-price" class="text-lodz-orange font-bold text-lg"></p>
+            </div>
+
+            <form id="purchase-form" onsubmit="submitForm(event)">
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Imię</label>
+                        <input type="text" required class="w-full border border-gray-300 p-2 focus:border-lodz-navy focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-1">Nazwisko</label>
+                        <input type="text" required class="w-full border border-gray-300 p-2 focus:border-lodz-navy focus:outline-none">
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700 mb-1">E-mail</label>
+                    <input type="email" required class="w-full border border-gray-300 p-2 focus:border-lodz-navy focus:outline-none">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Numer telefonu</label>
+                    <input type="tel" required class="w-full border border-gray-300 p-2 focus:border-lodz-navy focus:outline-none">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-gray-700 mb-1">Adres zamieszkania</label>
+                    <input type="text" required class="w-full border border-gray-300 p-2 focus:border-lodz-navy focus:outline-none">
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Wybierz metodę płatności</label>
+                    <div class="flex flex-col gap-3">
+                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-200 hover:bg-gray-50 transition-colors">
+                            <input type="radio" name="payment" value="przelew" required class="w-4 h-4 text-lodz-orange accent-lodz-orange">
+                            <span class="font-semibold text-gray-800">Tradycyjny przelew bankowy</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-200 hover:bg-gray-50 transition-colors">
+                            <input type="radio" name="payment" value="piknik" required class="w-4 h-4 text-lodz-orange accent-lodz-orange">
+                            <span class="font-semibold text-gray-800">Płatność gotówką podczas Pikniku</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <button type="button" onclick="closeModal()" class="w-1/3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 transition-colors uppercase tracking-wide">Anuluj</button>
+                    <button type="submit" class="w-2/3 bg-lodz-orange hover:bg-[#c2410c] text-white font-bold py-3 px-4 transition-colors uppercase tracking-wide">Potwierdzam zakup</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="success-message" class="hidden text-center py-10">
+            <svg class="w-20 h-20 text-green-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-3xl font-bold text-lodz-navy mb-4">Dziękujemy!</h3>
+            <p class="text-gray-600 mb-8 text-lg">Twoje zgłoszenie zostało poprawnie zarejestrowane. Na podany adres e-mail wysłaliśmy dalsze instrukcje dotyczące płatności oraz voucher.</p>
+            <button type="button" onclick="closeModal()" class="bg-lodz-navy hover:bg-blue-800 text-white font-bold py-3 px-8 transition-colors uppercase tracking-wide">Zamknij i wróć do strony</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
