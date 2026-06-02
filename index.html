@@ -167,7 +167,6 @@
         </div>
 
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-
             <div data-category="Motoryzacja" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
                 <div class="p-4 flex-grow border-b border-gray-200">
                     <span class="inline-block bg-gray-200 text-gray-800 text-sm font-bold px-2 py-1 mb-3 uppercase">Motoryzacja</span>
@@ -223,7 +222,6 @@
                     </button>
                 </div>
             </div>
-
         </section>
     </div>
 
@@ -252,8 +250,7 @@
     </div>
 </footer>
 
-<div id="purchase-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50 p-4 sm:p-6" onclick="handleBackdropClick(event)">
-
+<div id="purchase-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50 p-4 sm:p-6">
     <div class="bg-white p-6 sm:p-8 max-w-xl w-full max-h-[95vh] overflow-y-auto border-t-4 border-lodz-orange shadow-2xl relative flex flex-col">
 
         <button onclick="closeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-900 text-3xl font-bold leading-none shadow-sm sm:shadow-none">&times;</button>
@@ -267,28 +264,28 @@
                 <p id="modal-service-price" class="text-lodz-orange font-bold text-lg sm:text-xl"></p>
             </div>
 
-            <form id="purchase-form" onsubmit="submitForm(event)">
+            <form id="purchase-form">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Imię</label>
-                        <input type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
+                        <label for="firstName" class="block text-sm font-bold text-gray-700 mb-1">Imię</label>
+                        <input id="firstName" type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
                     </div>
                     <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-1">Nazwisko</label>
-                        <input type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
+                        <label for="lastName" class="block text-sm font-bold text-gray-700 mb-1">Nazwisko</label>
+                        <input id="lastName" type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label class="block text-sm font-bold text-gray-700 mb-1">E-mail</label>
-                    <input type="email" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
+                    <label for="email" class="block text-sm font-bold text-gray-700 mb-1">E-mail</label>
+                    <input id="email" type="email" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
                 </div>
                 <div class="mb-4">
-                    <label class="block text-sm font-bold text-gray-700 mb-1">Numer telefonu</label>
-                    <input type="tel" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
+                    <label for="phone" class="block text-sm font-bold text-gray-700 mb-1">Numer telefonu</label>
+                    <input id="phone" type="tel" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
                 </div>
                 <div class="mb-6">
-                    <label class="block text-sm font-bold text-gray-700 mb-1">Adres zamieszkania</label>
-                    <input type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
+                    <label for="address" class="block text-sm font-bold text-gray-700 mb-1">Adres zamieszkania</label>
+                    <input id="address" type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
                 </div>
 
                 <div class="mb-8">

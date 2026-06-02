@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const purchaseForm = document.getElementById('purchase-form');
+    if (purchaseForm) {
+        purchaseForm.addEventListener('submit', submitForm);
+    }
+
+    const purchaseModal = document.getElementById('purchase-modal');
+    if (purchaseModal) {
+        purchaseModal.addEventListener('click', handleBackdropClick);
+    }
+});
+
 function showView(viewId, category = 'all') {
     document.getElementById('home-view').classList.add('hidden');
     document.getElementById('catalog-view').classList.add('hidden');
@@ -51,7 +63,6 @@ function openModal(serviceName, price) {
 
 function closeModal() {
     document.getElementById('purchase-modal').classList.add('hidden');
-
     document.body.style.overflow = '';
 }
 
@@ -62,6 +73,7 @@ function handleBackdropClick(event) {
 }
 
 function submitForm(event) {
+    // Przerywa domyślną akcję wysyłania formularza, np. przeładowanie strony
     event.preventDefault();
     document.getElementById('purchase-form-container').classList.add('hidden');
     document.getElementById('success-message').classList.remove('hidden');
