@@ -23,16 +23,13 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-<nav class="bg-lodz-navy bg-pattern text-white py-4 shadow-md nav">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-wider">
-            <button onclick="showView('home')" class="hover:text-gray-200 uppercase">Fachowcy Szkołom</button>
-        </div>
-        <ul class="flex space-x-6 font-semibold">
-            <li><button onclick="showView('home')" class="hover:text-gray-300 transition duration-200">Start</button></li>
-            <li><button onclick="showView('about')" class="hover:text-gray-300 transition duration-200">O akcji</button></li>
-            <li><button onclick="showView('catalog', 'all')" class="hover:text-gray-300 transition duration-200">Katalog usług</button></li>
-            <li><a href="#footer" class="hover:text-gray-300 transition duration-200">Kontakt</a></li>
+<nav class="nav">
+    <button onclick="showView('home')" class="main_button">Fachowcy Szkołom</button>
+    <div>
+        <ul>
+            <li><button onclick="showView('about')" >O akcji</button></li>
+            <li><button onclick="showView('catalog', 'all')">Katalog usług</button></li>
+            <li><button onclick="location.href='#footer'">Kontakt</button></li>
         </ul>
     </div>
 </nav>
