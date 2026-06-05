@@ -817,3 +817,64 @@ body {
     fill: #ef4444;
     color: #ef4444;
 }
+
+.form-group input::placeholder {
+    color: #9ca3af; /* Szary kolor dla przykładu my.mail@company.com */
+}
+
+/* Phone Input Styling */
+.phone-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.phone-prefix {
+    width: 30%;
+    border: 1px solid var(--gray-border);
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--white-light);
+    color: var(--gray-text);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.phone-prefix:focus {
+    border-color: var(--navy-normal);
+}
+
+.phone-input-group input#phone {
+    width: 70%;
+}
+
+/* Address Grid Styling */
+.address-group .form-row {
+    margin-bottom: 0.5rem;
+}
+
+.form-subgroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-subgroup input {
+    width: 100%;
+    border: 1px solid var(--gray-border);
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.form-subgroup input:focus {
+    border-color: var(--navy-normal);
+}
+
+/* Proporcje szerokości dla pól adresu */
+.street-col { flex: 2.5; }
+.house-col { flex: 1; }
+.zip-col { flex: 1; }
+.city-col { flex: 2; }
+.w-full { flex: 1; width: 100%; }

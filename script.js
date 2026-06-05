@@ -80,3 +80,42 @@ function submitForm(event) {
     document.getElementById('purchase-form-container').classList.add('hidden');
     document.getElementById('success-message').classList.remove('hidden');
 }
+
+/**
+ * Automatycznie formatuje wpisywany numer telefonu w XXX XXX XXX
+ * Limit do 9 cyfr jest obsługiwany przez usuwanie nadmiaru po czyszczeniu
+ */
+function formatPhone(inputElement) {
+    let rawValue = inputElement.value.replace(/\D/g, '');
+
+    if (rawValue.length > 9) {
+        rawValue = rawValue.substring(0, 9);
+    }
+
+    let formattedValue = '';
+    for (let i = 0; i < rawValue.length; i++) {
+        if (i > 0 && i % 3 === 0) {
+            formattedValue += ' ';
+        }
+        formattedValue += rawValue[i];
+    }
+
+    inputElement.value = formattedValue;
+}
+
+/**
+ * Automatycznie formatuje wpisywany kod pocztowy w XX-XXX
+ */
+function formatZipCode(inputElement) {
+    let rawValue = inputElement.value.replace(/\D/g, '');
+
+    if (rawValue.length > 5) {
+        rawValue = rawValue.substring(0, 5);
+    }
+
+    if (rawValue.length > 2) {
+        inputElement.value = rawValue.substring(0, 2) + '-' + rawValue.substring(2);
+    } else {
+        inputElement.value = rawValue;
+    }
+}
