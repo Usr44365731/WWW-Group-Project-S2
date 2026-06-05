@@ -4,273 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fachowcy Szkołom - Budujemy Przyszłość Lokalnie</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'lodz-navy': '#1e3a8a',
-                        'lodz-orange': '#ea580c',
-                        'lodz-orange-dark': '#c2410c'
-                    }
-                }
-            }
-        }
-    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex flex-col min-h-screen">
+<body>
 
-<nav class="bg-lodz-navy bg-pattern text-white py-4 shadow-md nav">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-wider">
-            <button onclick="showView('home')" class="hover:text-gray-200 uppercase">Fachowcy Szkołom</button>
-        </div>
-        <ul class="flex space-x-6 font-semibold">
-            <li><button onclick="showView('home')" class="hover:text-gray-300 transition duration-200">Start</button></li>
-            <li><button onclick="showView('about')" class="hover:text-gray-300 transition duration-200">O akcji</button></li>
-            <li><button onclick="showView('catalog', 'all')" class="hover:text-gray-300 transition duration-200">Katalog usług</button></li>
-            <li><a href="#footer" class="hover:text-gray-300 transition duration-200">Kontakt</a></li>
+<nav class="nav">
+    <button onclick="showView('home')" class="main_button">Fachowcy Szkołom</button>
+    <div>
+        <ul>
+            <li><button onclick="showView('home')">Start</button></li>
+            <li><button onclick="showView('about')">O akcji</button></li>
+            <li><button onclick="showView('catalog', 'all')">Katalog usług</button></li>
+            <li><button onclick="location.href='#footer'">Kontakt</button></li>
         </ul>
     </div>
 </nav>
 
-<main class="flex-grow container mx-auto px-4 py-8">
+<main class="main-content">
 
-    <div id="home-view">
-        <section class="mb-12 bg-white p-6 border border-gray-200 shadow-sm">
-            <h2 class="text-xl font-bold mb-4 text-lodz-navy">Stan zbiórki: Sprzęt dla Łódzkich Szkół Zawodowych</h2>
-            <div class="w-full bg-gray-200 h-8 border border-gray-300 relative overflow-hidden">
-                <div class="bg-lodz-orange progress-stripes h-full flex items-center justify-center text-white font-bold text-sm transition-all duration-1000" style="width: 100%;">
-                    Mamy już 15 400 PLN! Zbieramy dalej!
-                </div>
-            </div>
-            <p class="text-base font-bold uppercase tracking-wide text-lodz-orange mt-2 text-right">To zbiórka bez ograniczeń! Każda usługa to więcej sprzętu.</p>
-        </section>
+    <div id="home-view" class="view-section">
+        <header class="progress-bar-container">
+            <h2>Stan zbiórki: Sprzęt dla Łódzkich Szkół Zawodowych</h2>
+            <div class="progress-bar">Mamy już 15 400 PLN! Zbieramy dalej!</div>
+            <p>To zbiórka bez ograniczeń! Każda usługa to więcej sprzętu.</p>
+        </header>
 
-        <section class="mb-12">
-            <div class="w-full bg-white border border-gray-300 shadow-md p-8">
-                <h3 class="text-2xl font-bold mb-4 text-lodz-navy uppercase tracking-wide border-b-2 border-lodz-orange pb-2 inline-block">Dlaczego zbieramy? Solidarne wsparcie łódzkiej edukacji</h3>
-                <p class="text-gray-700 leading-relaxed mb-4 text-lg">
-                    Inicjatywa <strong>"Fachowcy Szkołom"</strong> to lokalna akcja charytatywna, w której mistrzowie swojego fachu z Łodzi oferują swoją ciężką pracę i umiejętności. Ty kupujesz potrzebną Ci usługę, a <strong>100% wpłaconych środków</strong> trafia na dedykowane konto zbiórki.
-                </p>
-                <p class="text-gray-700 leading-relaxed mb-4 text-lg">
-                    Naszym celem jest wyposażenie łódzkich techników i szkół zawodowych w nowoczesne narzędzia i maszyny. Wierzymy, że inwestycja w wykształcenie lokalnej młodzieży to gwarancja, że w przyszłości nasze domy i samochody będą w dobrych rękach.
-                </p>
-                <div class="bg-blue-50 border-l-4 border-lodz-navy p-4 mt-6">
-                    <p class="font-semibold text-lodz-navy text-lg">Finał akcji już wkrótce!</p>
-                    <p class="text-base text-gray-700">Zapraszamy na Wielki Piknik Rzemieślniczy, podczas którego odbędą się wyjątkowe licytacje i pokazy umiejętności naszych fachowców. Szczegóły poniżej w sekcji licytacji.</p>
+        <section class="info-section">
+            <div class="content-card">
+                <h3 class="section-title underlined">Dlaczego zbieramy? Solidarne wsparcie łódzkiej edukacji</h3>
+                <p>Inicjatywa <strong>"Fachowcy Szkołom"</strong> to lokalna akcja charytatywna, w której mistrzowie swojego fachu z Łodzi oferują swoją ciężką pracę i umiejętności. Ty kupujesz potrzebną Ci usługę, a <strong>100% wpłaconych środków</strong> trafia na dedykowane konto zbiórki.</p>
+                <p>Naszym celem jest wyposażenie łódzkich techników i szkół zawodowych w nowoczesne narzędzia i maszyny. Wierzymy, że inwestycja w wykształcenie lokalnej młodzieży to gwarancja, że w przyszłości nasze domy i samochody będą w dobrych rękach.</p>
+
+                <div class="alert-box">
+                    <h4>Finał akcji już wkrótce!</h4>
+                    <p>Zapraszamy na Wielki Piknik Rzemieślniczy, podczas którego odbędą się wyjątkowe licytacje i pokazy umiejętności naszych fachowców. Szczegóły poniżej w sekcji licytacji.</p>
                 </div>
             </div>
         </section>
 
-        <h3 class="text-2xl font-bold mb-6 text-lodz-navy uppercase tracking-wide border-t-2 border-gray-200 pt-8">Znajdź potrzebną usługę (Kategorie)</h3>
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-
-            <button onclick="showView('catalog', 'Motoryzacja')" class="bg-white border-2 border-lodz-navy shadow-sm p-8 flex flex-col items-center justify-center hover:bg-lodz-navy hover:text-white transition-colors group cursor-pointer text-center">
-                <span class="text-2xl font-bold uppercase tracking-widest mb-2 text-lodz-navy group-hover:text-white">Motoryzacja</span>
-                <span class="text-base text-gray-600 group-hover:text-gray-200">Przeglądy, wymiana opon, detailing, serwis</span>
+        <h3 class="section-title bordered-top">Znajdź potrzebną usługę (Kategorie)</h3>
+        <section class="grid-3-col">
+            <button onclick="showView('catalog', 'Motoryzacja')" class="category-card">
+                <span class="category-title">Motoryzacja</span>
+                <span class="category-desc">Przeglądy, wymiana opon, detailing, serwis</span>
             </button>
-
-            <button onclick="showView('catalog', 'Remont')" class="bg-white border-2 border-lodz-navy shadow-sm p-8 flex flex-col items-center justify-center hover:bg-lodz-navy hover:text-white transition-colors group cursor-pointer text-center">
-                <span class="text-2xl font-bold uppercase tracking-widest mb-2 text-lodz-navy group-hover:text-white">Remont / Budowa</span>
-                <span class="text-base text-gray-600 group-hover:text-gray-200">Malowanie, gładzie, układanie paneli, naprawy</span>
+            <button onclick="showView('catalog', 'Remont')" class="category-card">
+                <span class="category-title">Remont / Budowa</span>
+                <span class="category-desc">Malowanie, gładzie, układanie paneli, naprawy</span>
             </button>
-
-            <button onclick="showView('catalog', 'Ogród')" class="bg-white border-2 border-lodz-navy shadow-sm p-8 flex flex-col items-center justify-center hover:bg-lodz-navy hover:text-white transition-colors group cursor-pointer text-center">
-                <span class="text-2xl font-bold uppercase tracking-widest mb-2 text-lodz-navy group-hover:text-white">Dom i Ogród</span>
-                <span class="text-base text-gray-600 group-hover:text-gray-200">Pielęgnacja zieleni, sprzątanie, złota rączka</span>
+            <button onclick="showView('catalog', 'Ogród')" class="category-card">
+                <span class="category-title">Dom i Ogród</span>
+                <span class="category-desc">Pielęgnacja zieleni, sprzątanie, złota rączka</span>
             </button>
-
         </section>
 
-        <h3 class="text-2xl font-bold mb-6 text-lodz-navy uppercase tracking-wide border-t-2 border-gray-200 pt-8">Licytacje na żywo (Wielki Piknik)</h3>
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-
-            <div class="bg-blue-50 border-2 border-lodz-navy shadow-sm flex flex-col relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-lodz-navy text-white text-sm font-bold px-3 py-1 uppercase tracking-widest">
-                    Aukcja Główna
+        <h3 class="section-title bordered-top">Licytacje na żywo (Wielki Piknik)</h3>
+        <section class="grid-2-col">
+            <div class="auction-card">
+                <div class="badge badge-primary">Aukcja Główna</div>
+                <div class="auction-body">
+                    <h4>Złota Rączka na cały dzień – Całkowita pomoc remontowa!</h4>
+                    <p>Brygada dwóch doświadczonych fachowców na pełne 8 godzin do Twojej dyspozycji! Usuną każdą usterkę, podłączą sprzęt AGD, zamontują szafki, naprawią hydraulikę lub elektrykę.</p>
+                    <p class="highlight">Termin realizacji do ustalenia ze zwycięzcą licytacji.</p>
                 </div>
-                <div class="p-6 flex-grow border-b border-blue-100 mt-4">
-                    <h4 class="text-xl font-bold mb-3 text-lodz-navy pr-4">Złota Rączka na cały dzień – Całkowita pomoc remontowa!</h4>
-                    <p class="text-gray-700 leading-relaxed mb-4 text-base">
-                        Brygada dwóch doświadczonych fachowców na pełne 8 godzin do Twojej dyspozycji! Usuną każdą usterkę, podłączą sprzęt AGD, zamontują szafki, naprawią hydraulikę lub elektrykę.
-                    </p>
-                    <p class="text-base font-semibold text-gray-800">Termin realizacji do ustalenia ze zwycięzcą licytacji.</p>
-                </div>
-                <div class="p-6 bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div>
-                        <span class="block text-sm text-gray-500 uppercase tracking-wide">Cena wywoławcza</span>
-                        <span class="text-3xl font-bold text-gray-900">500 PLN</span>
+                <div class="auction-footer">
+                    <div class="price-info">
+                        <span>Cena wywoławcza</span>
+                        <strong>500 PLN</strong>
                     </div>
-                    <button onclick="openModal('Złota Rączka na cały dzień', '500 PLN (Cena wywoławcza)')" class="w-full sm:w-auto text-center bg-transparent border-2 border-lodz-navy text-lodz-navy hover:bg-lodz-navy hover:text-white font-bold py-3 px-6 transition duration-200 uppercase tracking-wide">
-                        Licytuj na Pikniku
-                    </button>
+                    <button onclick="openModal('Złota Rączka na cały dzień', '500 PLN (Cena wywoławcza)')" class="btn-outline">Licytuj na Pikniku</button>
                 </div>
             </div>
 
-            <div class="bg-blue-50 border-2 border-lodz-navy shadow-sm flex flex-col relative overflow-hidden">
-                <div class="absolute top-0 right-0 bg-lodz-navy text-white text-sm font-bold px-3 py-1 uppercase tracking-widest">
-                    Aukcja Specjalna
+            <div class="auction-card">
+                <div class="badge badge-primary">Aukcja Specjalna</div>
+                <div class="auction-body">
+                    <h4>Generalny przegląd dachu i rynien z naprawą</h4>
+                    <p>Certyfikowany mistrz dekarstwa dokona kompleksowego przeglądu dachu Twojego domu. Usługa obejmuje czyszczenie rynien, wymianę pękniętych dachówek, uszczelnienie komina oraz profesjonalny raport.</p>
+                    <p class="highlight">Usługa dostępna na terenie Łodzi i całego województwa.</p>
                 </div>
-                <div class="p-6 flex-grow border-b border-blue-100 mt-4">
-                    <h4 class="text-xl font-bold mb-3 text-lodz-navy pr-4">Generalny przegląd dachu i rynien z naprawą</h4>
-                    <p class="text-gray-700 leading-relaxed mb-4 text-base">
-                        Certyfikowany mistrz dekarstwa dokona kompleksowego przeglądu dachu Twojego domu. Usługa obejmuje czyszczenie rynien, wymianę pękniętych dachówek, uszczelnienie komina oraz profesjonalny raport.
-                    </p>
-                    <p class="text-base font-semibold text-gray-800">Usługa dostępna na terenie Łodzi i całego województwa.</p>
-                </div>
-                <div class="p-6 bg-white flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div>
-                        <span class="block text-sm text-gray-500 uppercase tracking-wide">Cena wywoławcza</span>
-                        <span class="text-3xl font-bold text-gray-900">800 PLN</span>
+                <div class="auction-footer">
+                    <div class="price-info">
+                        <span>Cena wywoławcza</span>
+                        <strong>800 PLN</strong>
                     </div>
-                    <button onclick="openModal('Generalny przegląd dachu i rynien', '800 PLN (Cena wywoławcza)')" class="w-full sm:w-auto text-center bg-transparent border-2 border-lodz-navy text-lodz-navy hover:bg-lodz-navy hover:text-white font-bold py-3 px-6 transition duration-200 uppercase tracking-wide">
-                        Licytuj na Pikniku
-                    </button>
+                    <button onclick="openModal('Generalny przegląd dachu i rynien', '800 PLN (Cena wywoławcza)')" class="btn-outline">Licytuj na Pikniku</button>
                 </div>
             </div>
-
         </section>
     </div>
 
-    <div id="about-view" class="hidden">
-
-        <nav class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-wide" aria-label="Breadcrumb">
-            <ol class="list-none p-0 inline-flex items-center">
-                <li>
-                    <button onclick="showView('home')" class="hover:text-lodz-orange transition-colors">Strona Główna</button>
-                </li>
-                <li><span class="mx-2">></span></li>
-                <li><span class="text-lodz-navy">O Akcji</span></li>
+    <div id="about-view" class="view-section hidden">
+        <nav class="breadcrumb">
+            <ol>
+                <li><button onclick="showView('home')">Strona Główna</button></li>
+                <li class="separator">></li>
+                <li class="current-page">O Akcji</li>
             </ol>
         </nav>
 
-        <h2 class="text-3xl font-bold text-lodz-navy uppercase tracking-wide mb-6 border-b-2 border-gray-200 pb-4">Czym jest projekt "Fachowcy Szkołom"?</h2>
+        <h2 class="page-title">Czym jest projekt "Fachowcy Szkołom"?</h2>
 
-        <div class="bg-white border border-gray-300 shadow-sm p-6 sm:p-10 mb-12">
-            <div class="text-lg text-gray-700 leading-relaxed space-y-6 font-medium">
-                <p>
-                    <strong class="text-lodz-navy text-xl">"Fachowcy Szkołom"</strong> to w 100% łódzka inicjatywa. Łączymy mistrzów rzemiosła, lokalnych przedsiębiorców oraz mieszkańców, aby wspólnie osiągnąć jeden, konkretny cel: wyposażyć łódzkie szkoły zawodowe i technika w nowoczesny, niezawodny sprzęt.
-                </p>
+        <div class="content-card">
+            <p class="lead-text"><strong class="highlight-navy">"Fachowcy Szkołom"</strong> to w 100% łódzka inicjatywa. Łączymy mistrzów rzemiosła, lokalnych przedsiębiorców oraz mieszkańców, aby wspólnie osiągnąć jeden, konkretny cel: wyposażyć łódzkie szkoły zawodowe i technika w nowoczesny, niezawodny sprzęt.</p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-10">
-                    <div class="bg-gray-50 p-6 border-t-4 border-lodz-navy text-center shadow-sm">
-                        <span class="block text-4xl mb-3">🛠️</span>
-                        <h4 class="font-bold text-xl mb-2 text-gray-900 uppercase tracking-wide">1. Wybierasz usługę</h4>
-                        <p class="text-base text-gray-600">Przeglądasz katalog i kupujesz voucher na potrzebną Ci naprawę lub usługę.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 border-t-4 border-lodz-orange text-center shadow-sm">
-                        <span class="block text-4xl mb-3">🤝</span>
-                        <h4 class="font-bold text-xl mb-2 text-gray-900 uppercase tracking-wide">2. Fachowiec pracuje</h4>
-                        <p class="text-base text-gray-600">Mistrz w swoim fachu poświęca swój czas i wykonuje dla Ciebie solidną pracę.</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 border-t-4 border-green-600 text-center shadow-sm">
-                        <span class="block text-4xl mb-3">📈</span>
-                        <h4 class="font-bold text-xl mb-2 text-gray-900 uppercase tracking-wide">3. Szkoła zyskuje</h4>
-                        <p class="text-base text-gray-600">100% twojej wpłaty trafia bezpośrednio na wyodrębnione konto na zakup sprzętu.</p>
-                    </div>
+            <div class="grid-3-col steps-grid">
+                <div class="step-card step-navy">
+                    <span class="step-icon">🛠️</span>
+                    <h4>1. Wybierasz usługę</h4>
+                    <p>Przeglądasz katalog i kupujesz voucher na potrzebną Ci naprawę lub usługę.</p>
                 </div>
-
-                <p>
-                    Wierzymy, że solidne wykształcenie techniczne to podstawa silnej gospodarki w naszym regionie. Braki w wyposażeniu warsztatów szkolnych to problem, który możemy rozwiązać solidarnie. Nie pobieramy żadnych prowizji od transakcji. Każda zebrana złotówka jest w pełni transparentnie rozliczana, a faktury zakupowe będą publikowane na tej stronie.
-                </p>
-
-                <div class="bg-gray-100 p-6 mt-8 border-l-4 border-lodz-navy">
-                    <h3 class="text-xl font-bold text-lodz-navy mb-3 uppercase">Kto za tym stoi?</h3>
-                    <p class="text-base text-gray-700">
-                        Za bezpieczeństwo prawne, organizację zbiórki oraz stworzenie platformy odpowiada Fundacja "Budujemy Przyszłość Lokalnie" (KRS: 0000123456) we współpracy z autorami projektu technicznego: Kacprem Kuczyńskim, Jakubem Krajewskim oraz Szymonem Michalakiem. Gwarantujemy powagę i bezpieczeństwo na każdym kroku akcji.
-                    </p>
+                <div class="step-card step-orange">
+                    <span class="step-icon">🤝</span>
+                    <h4>2. Fachowiec pracuje</h4>
+                    <p>Mistrz w swoim fachu poświęca swój czas i wykonuje dla Ciebie solidną pracę.</p>
                 </div>
+                <div class="step-card step-green">
+                    <span class="step-icon">📈</span>
+                    <h4>3. Szkoła zyskuje</h4>
+                    <p>100% twojej wpłaty trafia bezpośrednio na wyodrębnione konto na zakup sprzętu.</p>
+                </div>
+            </div>
+
+            <p>Wierzymy, że solidne wykształcenie techniczne to podstawa silnej gospodarki w naszym regionie. Braki w wyposażeniu warsztatów szkolnych to problem, który możemy rozwiązać solidarnie. Nie pobieramy żadnych prowizji od transakcji. Każda zebrana złotówka jest w pełni transparentnie rozliczana, a faktury zakupowe będą publikowane na tej stronie.</p>
+
+            <div class="alert-box neutral">
+                <h4>Kto za tym stoi?</h4>
+                <p>Za bezpieczeństwo prawne, organizację zbiórki oraz stworzenie platformy odpowiada Fundacja "Budujemy Przyszłość Lokalnie" (KRS: 0000123456) we współpracy z autorami projektu technicznego: Kacprem Kuczyńskim, Jakubem Krajewskim oraz Szymonem Michalakiem. Gwarantujemy powagę i bezpieczeństwo na każdym kroku akcji.</p>
             </div>
         </div>
     </div>
 
-    <div id="catalog-view" class="hidden">
-
-        <nav class="text-sm font-bold text-gray-500 mb-6 uppercase tracking-wide" aria-label="Breadcrumb">
-            <ol class="list-none p-0 inline-flex items-center">
-                <li>
-                    <button onclick="showView('home')" class="hover:text-lodz-orange transition-colors">Strona Główna</button>
-                </li>
-                <li>
-                    <span class="mx-2">></span>
-                </li>
-                <li>
-                    <span class="text-lodz-navy">Katalog Usług</span>
-                </li>
+    <div id="catalog-view" class="view-section hidden">
+        <nav class="breadcrumb">
+            <ol>
+                <li><button onclick="showView('home')">Strona Główna</button></li>
+                <li class="separator">></li>
+                <li class="current-page">Katalog Usług</li>
             </ol>
         </nav>
 
-        <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-b-2 border-gray-200 pb-4">
-            <div>
-                <h2 class="text-3xl font-bold text-lodz-navy uppercase tracking-wide mb-2">Katalog usług</h2>
-                <p class="text-gray-700 text-lg">Wybierz usługę, kup voucher, a 100% kwoty trafi na wyposażenie szkół.</p>
+        <div class="catalog-header">
+            <div class="title-group">
+                <h2 class="page-title no-margin">Katalog usług</h2>
+                <p>Wybierz usługę, kup voucher, a 100% kwoty trafi na wyposażenie szkół.</p>
             </div>
-
-            <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="filter-buttons">
-                <button data-filter="all" onclick="filterCatalog('all')" class="filter-btn active bg-lodz-navy text-white px-4 py-2 font-bold text-sm uppercase transition-colors">Wszystkie</button>
-                <button data-filter="Motoryzacja" onclick="filterCatalog('Motoryzacja')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 font-bold text-sm uppercase transition-colors">Motoryzacja</button>
-                <button data-filter="Remont" onclick="filterCatalog('Remont')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 font-bold text-sm uppercase transition-colors">Remont</button>
-                <button data-filter="Ogród" onclick="filterCatalog('Ogród')" class="filter-btn bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 font-bold text-sm uppercase transition-colors">Dom i Ogród</button>
+            <div class="filter-group" id="filter-buttons">
+                <button data-filter="all" onclick="filterCatalog('all')" class="filter-btn active">Wszystkie</button>
+                <button data-filter="Motoryzacja" onclick="filterCatalog('Motoryzacja')" class="filter-btn">Motoryzacja</button>
+                <button data-filter="Remont" onclick="filterCatalog('Remont')" class="filter-btn">Remont</button>
+                <button data-filter="Ogród" onclick="filterCatalog('Ogród')" class="filter-btn">Dom i Ogród</button>
             </div>
         </div>
 
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div data-category="Motoryzacja" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
-                <div class="p-4 flex-grow border-b border-gray-200">
-                    <span class="inline-block bg-gray-200 text-gray-800 text-sm font-bold px-2 py-1 mb-3 uppercase">Motoryzacja</span>
-                    <h4 class="text-xl font-bold mb-2 text-lodz-navy">Wymiana oleju i filtrów</h4>
-                    <p class="text-base text-gray-700">Profesjonalna wymiana oleju silnikowego wraz ze wszystkimi filtrami bez względu na model pojazdu. Usługa realizowana w solidnym warsztacie na łódzkim Widzewie.</p>
+        <section class="grid-3-col">
+            <div data-category="Motoryzacja" class="service-item">
+                <div class="service-body">
+                    <span class="badge badge-secondary">Motoryzacja</span>
+                    <h4>Wymiana oleju i filtrów</h4>
+                    <p>Profesjonalna wymiana oleju silnikowego wraz ze wszystkimi filtrami bez względu na model pojazdu. Usługa realizowana w solidnym warsztacie na łódzkim Widzewie.</p>
                 </div>
-                <div class="p-4 bg-gray-50 flex items-center justify-between">
-                    <span class="text-2xl font-bold text-gray-900">120 PLN</span>
-                    <button onclick="openModal('Wymiana oleju i filtrów', '120 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
-                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                <div class="service-footer">
+                    <span class="service-price">120 PLN</span>
+                    <button onclick="openModal('Wymiana oleju i filtrów', '120 PLN')" class="btn-primary btn-heart-hover">
+                        Kupuję
+                        <svg class="heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                     </button>
                 </div>
             </div>
 
-            <div data-category="Remont" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
-                <div class="p-4 flex-grow border-b border-gray-200">
-                    <span class="inline-block bg-gray-200 text-gray-800 text-sm font-bold px-2 py-1 mb-3 uppercase">Remont / Budowa</span>
-                    <h4 class="text-xl font-bold mb-2 text-lodz-navy">Kompleksowe malowanie pokoju</h4>
-                    <p class="text-base text-gray-700">Przygotowanie ścian, gruntowanie i dwukrotne malowanie sufitu oraz ścian (bez ograniczeń metrażowych w obrębie jednego pomieszczenia). Pełne zabezpieczenie Twoich mebli.</p>
+            <div data-category="Remont" class="service-item">
+                <div class="service-body">
+                    <span class="badge badge-secondary">Remont / Budowa</span>
+                    <h4>Kompleksowe malowanie pokoju</h4>
+                    <p>Przygotowanie ścian, gruntowanie i dwukrotne malowanie sufitu oraz ścian (bez ograniczeń metrażowych w obrębie jednego pomieszczenia). Pełne zabezpieczenie Twoich mebli.</p>
                 </div>
-                <div class="p-4 bg-gray-50 flex items-center justify-between">
-                    <span class="text-2xl font-bold text-gray-900">400 PLN</span>
-                    <button onclick="openModal('Kompleksowe malowanie pokoju', '400 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
-                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                <div class="service-footer">
+                    <span class="service-price">400 PLN</span>
+                    <button onclick="openModal('Kompleksowe malowanie pokoju', '400 PLN')" class="btn-primary btn-heart-hover">
+                        Kupuję
+                        <svg class="heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                     </button>
                 </div>
             </div>
 
-            <div data-category="Ogród" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
-                <div class="p-4 flex-grow border-b border-gray-200">
-                    <span class="inline-block bg-gray-200 text-gray-800 text-sm font-bold px-2 py-1 mb-3 uppercase">Dom i Ogród</span>
-                    <h4 class="text-xl font-bold mb-2 text-lodz-navy">Prace porządkowe w ogrodzie</h4>
-                    <p class="text-base text-gray-700">Pełne przygotowanie Twojego ogrodu do sezonu. Cięcie krzewów, formowanie koron drzew, koszenie i aeracja trawnika, wywóz zielonych odpadów. Zespół z własnym sprzętem.</p>
+            <div data-category="Ogród" class="service-item">
+                <div class="service-body">
+                    <span class="badge badge-secondary">Dom i Ogród</span>
+                    <h4>Prace porządkowe w ogrodzie</h4>
+                    <p>Pełne przygotowanie Twojego ogrodu do sezonu. Cięcie krzewów, formowanie koron drzew, koszenie i aeracja trawnika, wywóz zielonych odpadów. Zespół z własnym sprzętem.</p>
                 </div>
-                <div class="p-4 bg-gray-50 flex items-center justify-between">
-                    <span class="text-2xl font-bold text-gray-900">350 PLN</span>
-                    <button onclick="openModal('Prace porządkowe w ogrodzie', '350 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
-                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                <div class="service-footer">
+                    <span class="service-price">350 PLN</span>
+                    <button onclick="openModal('Prace porządkowe w ogrodzie', '350 PLN')" class="btn-primary btn-heart-hover">
+                        Kupuję
+                        <svg class="heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                     </button>
                 </div>
             </div>
 
-            <div data-category="Motoryzacja" class="service-item bg-white border border-gray-300 shadow-sm flex flex-col hover:shadow-md transition-shadow">
-                <div class="p-4 flex-grow border-b border-gray-200">
-                    <span class="inline-block bg-gray-200 text-gray-800 text-sm font-bold px-2 py-1 mb-3 uppercase">Motoryzacja</span>
-                    <h4 class="text-xl font-bold mb-2 text-lodz-navy">Sezonowa wymiana opon</h4>
-                    <p class="text-base text-gray-700">Zrzucenie starych opon, założenie nowych (niezależnie od rozmiaru felgi), komputerowe wyważenie kół i montaż na aucie. Zero kolejek, obsługa VIP.</p>
+            <div data-category="Motoryzacja" class="service-item">
+                <div class="service-body">
+                    <span class="badge badge-secondary">Motoryzacja</span>
+                    <h4>Sezonowa wymiana opon</h4>
+                    <p>Zrzucenie starych opon, założenie nowych (niezależnie od rozmiaru felgi), komputerowe wyważenie kół i montaż na aucie. Zero kolejek, obsługa VIP.</p>
                 </div>
-                <div class="p-4 bg-gray-50 flex items-center justify-between">
-                    <span class="text-2xl font-bold text-gray-900">100 PLN</span>
-                    <button onclick="openModal('Sezonowa wymiana opon', '100 PLN')" class="bg-lodz-orange hover:bg-lodz-orange-dark text-white font-bold py-2 px-4 text-sm shadow btn-heart-hover flex items-center gap-1 uppercase">
-                        Kupuję <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                <div class="service-footer">
+                    <span class="service-price">100 PLN</span>
+                    <button onclick="openModal('Sezonowa wymiana opon', '100 PLN')" class="btn-primary btn-heart-hover">
+                        Kupuję
+                        <svg class="heart-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                     </button>
                 </div>
             </div>
@@ -279,99 +223,376 @@
 
 </main>
 
-<footer id="footer" class="bg-lodz-navy bg-pattern text-white py-8 mt-12 border-t-4 border-lodz-orange">
-    <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center text-sm gap-6">
-        <div class="text-center lg:text-left">
-            <span class="font-bold text-base block mb-1">Masz pytania? Skontaktuj się z nami!</span>
+<footer id="footer" class="main-footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <span class="footer-title">Masz pytania? Skontaktuj się z nami!</span>
             kontakt@fachowcyszkolom.lodz.pl | Tel: +48 123 456 789
         </div>
 
-        <div class="bg-white/10 border border-white/20 p-4 text-center lg:text-left text-gray-200">
-            <p class="font-bold uppercase tracking-wide text-white mb-1">Fundacja "Budujemy Przyszłość Lokalnie"</p>
+        <div class="footer-legal">
+            <p class="foundation-name">Fundacja "Budujemy Przyszłość Lokalnie"</p>
             <p>Numer KRS: 0000123456 | NIP: 725-123-45-67</p>
-            <p class="text-xs mt-1 text-gray-400">100% środków z kampanii trafia bezpośrednio na wyodrębnione konto oświatowe.</p>
+            <p class="disclaimer">100% środków z kampanii trafia bezpośrednio na wyodrębnione konto oświatowe.</p>
         </div>
 
-        <div class="text-center lg:text-right flex flex-col gap-2">
-            <div class="flex gap-4 justify-center lg:justify-end">
-                <a href="#" class="hover:text-lodz-orange transition-colors underline">Regulamin akcji</a>
-                <a href="#" class="hover:text-lodz-orange transition-colors underline">Polityka Prywatności</a>
+        <div class="footer-links">
+            <div class="links-group">
+                <a href="#">Regulamin akcji</a>
+                <a href="#">Polityka Prywatności</a>
             </div>
-            <span class="text-gray-400 text-xs">Autorzy: Kuczyński Kacper, Krajewski Jakub, Michalak Szymon</span>
+            <span class="authors">Autorzy: Kuczyński Kacper, Krajewski Jakub, Michalak Szymon</span>
         </div>
     </div>
 </footer>
 
-<div id="purchase-modal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50 p-4 sm:p-6">
-    <div class="bg-white p-6 sm:p-8 max-w-xl w-full max-h-[95vh] overflow-y-auto border-t-4 border-lodz-orange shadow-2xl relative flex flex-col">
-
-        <button onclick="closeModal()" class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-900 text-3xl font-bold leading-none shadow-sm sm:shadow-none">&times;</button>
+<div id="purchase-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button onclick="closeModal()" class="modal-close">&times;</button>
 
         <div id="purchase-form-container">
-            <h3 class="text-xl sm:text-2xl font-bold text-lodz-navy mb-1 uppercase tracking-wide pr-6">Formularz Zgłoszeniowy</h3>
-            <p class="text-gray-700 text-sm sm:text-base mb-6">Wypełnij dane, aby potwierdzić chęć wsparcia i zakupu usługi.</p>
+            <h3 class="modal-title">Formularz Zgłoszeniowy</h3>
+            <p class="modal-desc">Wypełnij dane, aby potwierdzić chęć wsparcia i zakupu usługi.</p>
 
-            <div class="bg-gray-100 p-4 mb-6 border-l-4 border-lodz-orange">
-                <p id="modal-service-name" class="font-bold text-gray-900 text-base sm:text-lg"></p>
-                <p id="modal-service-price" class="text-lodz-orange font-bold text-lg sm:text-xl"></p>
+            <div class="modal-selection-info">
+                <p id="modal-service-name"></p>
+                <p id="modal-service-price"></p>
             </div>
 
             <form id="purchase-form">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 purchase-form">
-                    <div>
-                        <label for="firstName" class="block text-sm font-bold text-gray-700 mb-1">Imię</label>
-                        <input id="firstName" type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Imię</label>
+                        <input id="firstName" type="text" maxlength="50" required>
                     </div>
-                    <div>
-                        <label for="lastName" class="block text-sm font-bold text-gray-700 mb-1">Nazwisko</label>
-                        <input id="lastName" type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-sm font-bold text-gray-700 mb-1">E-mail</label>
-                    <input id="email" type="email" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
-                </div>
-                <div class="mb-4">
-                    <label for="phone" class="block text-sm font-bold text-gray-700 mb-1">Numer telefonu</label>
-                    <input id="phone" type="tel" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
-                </div>
-                <div class="mb-6">
-                    <label for="address" class="block text-sm font-bold text-gray-700 mb-1">Adres zamieszkania</label>
-                    <input id="address" type="text" required class="w-full border border-gray-300 p-3 focus:border-lodz-navy focus:outline-none text-base">
-                </div>
-
-                <div class="mb-8">
-                    <label class="block text-sm font-bold text-gray-700 mb-3">Wybierz metodę płatności</label>
-                    <div class="flex flex-col gap-3">
-                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-300 hover:bg-gray-50 transition-colors">
-                            <input type="radio" name="payment" value="blik" required class="w-5 h-5 text-lodz-orange accent-lodz-orange flex-shrink-0">
-                            <span class="font-bold text-gray-900 text-sm sm:text-base">BLIK (Szybka płatność mobilna)</span>
-                        </label>
-                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-300 hover:bg-gray-50 transition-colors">
-                            <input type="radio" name="payment" value="przelew" required class="w-5 h-5 text-lodz-orange accent-lodz-orange flex-shrink-0">
-                            <span class="font-bold text-gray-700 text-sm sm:text-base">Tradycyjny przelew bankowy</span>
-                        </label>
-                        <label class="flex items-center gap-3 cursor-pointer p-3 border border-gray-300 hover:bg-gray-50 transition-colors">
-                            <input type="radio" name="payment" value="piknik" required class="w-5 h-5 text-lodz-orange accent-lodz-orange flex-shrink-0">
-                            <span class="font-bold text-gray-700 text-sm sm:text-base">Płatność gotówką podczas Pikniku</span>
-                        </label>
+                    <div class="form-group">
+                        <label for="lastName">Nazwisko</label>
+                        <input id="lastName" type="text" maxlength="50" required>
                     </div>
                 </div>
 
-                <div class="flex flex-col-reverse sm:flex-row gap-4 mt-auto">
-                    <button type="button" onclick="closeModal()" class="w-full sm:w-1/3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-4 px-4 transition-colors uppercase tracking-wide">Anuluj</button>
-                    <button type="submit" class="w-full sm:w-2/3 bg-lodz-orange hover:bg-[#c2410c] text-white font-bold py-4 px-4 transition-colors uppercase tracking-wide text-base sm:text-lg shadow-md">Potwierdzam zakup</button>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <!-- Dodany szary placeholder -->
+                    <input id="email" type="email" placeholder="my.mail@company.com" maxlength="254" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Numer telefonu</label>
+                    <div class="phone-input-group">
+                        <select id="phone-prefix" class="phone-prefix" aria-label="Numer kierunkowy" required>
+                                <option value="+376">+376 (AD)</option>
+                                <option value="+971">+971 (AE)</option>
+                                <option value="+93">+93 (AF)</option>
+                                <option value="+1264">+1264 (AI)</option>
+                                <option value="+355">+355 (AL)</option>
+                                <option value="+374">+374 (AM)</option>
+                                <option value="+672">+672 (Antarctica)</option>
+                                <option value="+1268">+1268 (Antigua and Barbuda)</option>
+                                <option value="+244">+244 (AO)</option>
+                                <option value="+54">+54 (AR)</option>
+                                <option value="+1684">+1684 (AS)</option>
+                                <option value="+43">+43 (AT)</option>
+                                <option value="+61">+61 (AU)</option>
+                                <option value="+297">+297 (AW)</option>
+                                <option value="+358">+358 (AX)</option>
+                                <option value="+994">+994 (AZ)</option>
+                                <option value="+387">+387 (BA)</option>
+                                <option value="+1246">+1246 (BB)</option>
+                                <option value="+880">+880 (BD)</option>
+                                <option value="+32">+32 (BE)</option>
+                                <option value="+226">+226 (BF)</option>
+                                <option value="+359">+359 (BG)</option>
+                                <option value="+973">+973 (BH)</option>
+                                <option value="+257">+257 (BI)</option>
+                                <option value="+229">+229 (BJ)</option>
+                                <option value="+1441">+1441 (BM)</option>
+                                <option value="+591">+591 (BO)</option>
+                                <option value="+599">+599 (Bonaire, Sint Eustatius and Saba)</option>
+                                <option value="+55">+55 (Bouvet Island)</option>
+                                <option value="+55">+55 (BR)</option>
+                                <option value="+246">+246 (British Indian Ocean Territory)</option>
+                                <option value="+673">+673 (Brunei Darussalam)</option>
+                                <option value="+1242">+1242 (BS)</option>
+                                <option value="+975">+975 (BT)</option>
+                                <option value="+267">+267 (BW)</option>
+                                <option value="+375">+375 (BY)</option>
+                                <option value="+501">+501 (BZ)</option>
+                                <option value="+1">+1 (CA)</option>
+                                <option value="+236">+236 (CF)</option>
+                                <option value="+242">+242 (CG)</option>
+                                <option value="+41">+41 (CH)</option>
+                                <option value="+61">+61 (Christmas Island)</option>
+                                <option value="+56">+56 (CL)</option>
+                                <option value="+237">+237 (CM)</option>
+                                <option value="+86">+86 (CN)</option>
+                                <option value="+57">+57 (CO)</option>
+                                <option value="+672">+672 (Cocos (Keeling) Islands)</option>
+                                <option value="+242">+242 (Congo, Democratic Republic of the Congo)</option>
+                                <option value="+682">+682 (Cook Islands)</option>
+                                <option value="+225">+225 (Cote D'Ivoire)</option>
+                                <option value="+506">+506 (CR)</option>
+                                <option value="+53">+53 (CU)</option>
+                                <option value="+599">+599 (Curacao)</option>
+                                <option value="+238">+238 (CV)</option>
+                                <option value="+357">+357 (CY)</option>
+                                <option value="+420">+420 (CZ)</option>
+                                <option value="+49">+49 (DE)</option>
+                                <option value="+253">+253 (DJ)</option>
+                                <option value="+45">+45 (DK)</option>
+                                <option value="+1767">+1767 (DM)</option>
+                                <option value="+1809">+1809 (DO)</option>
+                                <option value="+213">+213 (DZ)</option>
+                                <option value="+593">+593 (EC)</option>
+                                <option value="+372">+372 (EE)</option>
+                                <option value="+20">+20 (EG)</option>
+                                <option value="+291">+291 (ER)</option>
+                                <option value="+34">+34 (ES)</option>
+                                <option value="+251">+251 (ET)</option>
+                                <option value="+500">+500 (Falkland Islands (Malvinas))</option>
+                                <option value="+298">+298 (Faroe Islands)</option>
+                                <option value="+358">+358 (FI)</option>
+                                <option value="+679">+679 (FJ)</option>
+                                <option value="+33">+33 (FR)</option>
+                                <option value="+594">+594 (French Guiana)</option>
+                                <option value="+689">+689 (French Polynesia)</option>
+                                <option value="+262">+262 (French Southern Territories)</option>
+                                <option value="+241">+241 (GA)</option>
+                                <option value="+1473">+1473 (GD)</option>
+                                <option value="+995">+995 (GE)</option>
+                                <option value="+233">+233 (GH)</option>
+                                <option value="+350">+350 (Gibraltar)</option>
+                                <option value="+299">+299 (GL)</option>
+                                <option value="+220">+220 (GM)</option>
+                                <option value="+224">+224 (GN)</option>
+                                <option value="+240">+240 (GQ)</option>
+                                <option value="+30">+30 (GR)</option>
+                                <option value="+502">+502 (GT)</option>
+                                <option value="+590">+590 (Guadeloupe)</option>
+                                <option value="+1671">+1671 (Guam)</option>
+                                <option value="+44">+44 (Guernsey)</option>
+                                <option value="+245">+245 (Guinea-Bissau)</option>
+                                <option value="+592">+592 (GY)</option>
+                                <option value="+504">+504 (HN)</option>
+                                <option value="+39">+39 (Holy See (Vatican City State))</option>
+                                <option value="+852">+852 (Hong Kong)</option>
+                                <option value="+385">+385 (HR)</option>
+                                <option value="+509">+509 (HT)</option>
+                                <option value="+36">+36 (HU)</option>
+                                <option value="+62">+62 (ID)</option>
+                                <option value="+353">+353 (IE)</option>
+                                <option value="+972">+972 (IL)</option>
+                                <option value="+91">+91 (IN)</option>
+                                <option value="+964">+964 (IQ)</option>
+                                <option value="+98">+98 (Iran, Islamic Republic of)</option>
+                                <option value="+354">+354 (IS)</option>
+                                <option value="+44">+44 (Isle of Man)</option>
+                                <option value="+39">+39 (IT)</option>
+                                <option value="+44">+44 (Jersey)</option>
+                                <option value="+1876">+1876 (JM)</option>
+                                <option value="+962">+962 (JO)</option>
+                                <option value="+81">+81 (JP)</option>
+                                <option value="+254">+254 (KE)</option>
+                                <option value="+996">+996 (KG)</option>
+                                <option value="+855">+855 (KH)</option>
+                                <option value="+686">+686 (Kiribati)</option>
+                                <option value="+269">+269 (KM)</option>
+                                <option value="+850">+850 (Korea, Democratic People's Republic of)</option>
+                                <option value="+82">+82 (Korea, Republic of)</option>
+                                <option value="+381">+381 (Kosovo)</option>
+                                <option value="+965">+965 (KW)</option>
+                                <option value="+1345">+1345 (KY)</option>
+                                <option value="+7">+7 (KZ)</option>
+                                <option value="+856">+856 (Lao People's Democratic Republic)</option>
+                                <option value="+961">+961 (LB)</option>
+                                <option value="+266">+266 (Lesotho)</option>
+                                <option value="+423">+423 (LI)</option>
+                                <option value="+218">+218 (Libyan Arab Jamahiriya)</option>
+                                <option value="+94">+94 (LK)</option>
+                                <option value="+231">+231 (LR)</option>
+                                <option value="+370">+370 (LT)</option>
+                                <option value="+352">+352 (LU)</option>
+                                <option value="+371">+371 (LV)</option>
+                                <option value="+212">+212 (MA)</option>
+                                <option value="+853">+853 (Macao)</option>
+                                <option value="+389">+389 (Macedonia, the Former Yugoslav Republic of)</option>
+                                <option value="+692">+692 (Marshall Islands)</option>
+                                <option value="+596">+596 (Martinique)</option>
+                                <option value="+222">+222 (Mauritania)</option>
+                                <option value="+230">+230 (Mauritius)</option>
+                                <option value="+262">+262 (Mayotte)</option>
+                                <option value="+377">+377 (MC)</option>
+                                <option value="+382">+382 (ME)</option>
+                                <option value="+261">+261 (MG)</option>
+                                <option value="+691">+691 (Micronesia, Federated States of)</option>
+                                <option value="+223">+223 (ML)</option>
+                                <option value="+95">+95 (MM)</option>
+                                <option value="+976">+976 (MN)</option>
+                                <option value="+373">+373 (Moldova, Republic of)</option>
+                                <option value="+1664">+1664 (Montserrat)</option>
+                                <option value="+356">+356 (MT)</option>
+                                <option value="+960">+960 (MV)</option>
+                                <option value="+265">+265 (MW)</option>
+                                <option value="+52">+52 (MX)</option>
+                                <option value="+60">+60 (MY)</option>
+                                <option value="+258">+258 (MZ)</option>
+                                <option value="+264">+264 (NA)</option>
+                                <option value="+674">+674 (Nauru)</option>
+                                <option value="+227">+227 (NE)</option>
+                                <option value="+599">+599 (Netherlands Antilles)</option>
+                                <option value="+687">+687 (New Caledonia)</option>
+                                <option value="+234">+234 (NG)</option>
+                                <option value="+505">+505 (NI)</option>
+                                <option value="+683">+683 (Niue)</option>
+                                <option value="+31">+31 (NL)</option>
+                                <option value="+47">+47 (NO)</option>
+                                <option value="+672">+672 (Norfolk Island)</option>
+                                <option value="+1670">+1670 (Northern Mariana Islands)</option>
+                                <option value="+977">+977 (NP)</option>
+                                <option value="+64">+64 (NZ)</option>
+                                <option value="+968">+968 (OM)</option>
+                                <option value="+507">+507 (PA)</option>
+                                <option value="+680">+680 (Palau)</option>
+                                <option value="+970">+970 (Palestinian Territory, Occupied)</option>
+                                <option value="+675">+675 (Papua New Guinea)</option>
+                                <option value="+51">+51 (PE)</option>
+                                <option value="+63">+63 (PH)</option>
+                                <option value="+64">+64 (Pitcairn)</option>
+                                <option value="+92">+92 (PK)</option>
+                                <option value="+48" selected>+48 (PL)</option>
+                                <option value="+351">+351 (PT)</option>
+                                <option value="+1787">+1787 (Puerto Rico)</option>
+                                <option value="+595">+595 (PY)</option>
+                                <option value="+974">+974 (QA)</option>
+                                <option value="+262">+262 (Reunion)</option>
+                                <option value="+40">+40 (RO)</option>
+                                <option value="+381">+381 (RS)</option>
+                                <option value="+7">+7 (Russian Federation)</option>
+                                <option value="+250">+250 (RW)</option>
+                                <option value="+966">+966 (SA)</option>
+                                <option value="+590">+590 (Saint Barthelemy)</option>
+                                <option value="+290">+290 (Saint Helena)</option>
+                                <option value="+1869">+1869 (Saint Kitts and Nevis)</option>
+                                <option value="+1758">+1758 (Saint Lucia)</option>
+                                <option value="+590">+590 (Saint Martin)</option>
+                                <option value="+508">+508 (Saint Pierre and Miquelon)</option>
+                                <option value="+1784">+1784 (Saint Vincent and the Grenadines)</option>
+                                <option value="+684">+684 (Samoa)</option>
+                                <option value="+239">+239 (Sao Tome and Principe)</option>
+                                <option value="+248">+248 (SC)</option>
+                                <option value="+249">+249 (SD)</option>
+                                <option value="+46">+46 (SE)</option>
+                                <option value="+381">+381 (Serbia and Montenegro)</option>
+                                <option value="+65">+65 (SG)</option>
+                                <option value="+386">+386 (SI)</option>
+                                <option value="+232">+232 (Sierra Leone)</option>
+                                <option value="+721">+721 (Sint Maarten)</option>
+                                <option value="+421">+421 (SK)</option>
+                                <option value="+378">+378 (SM)</option>
+                                <option value="+221">+221 (SN)</option>
+                                <option value="+252">+252 (SO)</option>
+                                <option value="+677">+677 (Solomon Islands)</option>
+                                <option value="+500">+500 (South Georgia and the South Sandwich Islands)</option>
+                                <option value="+211">+211 (South Sudan)</option>
+                                <option value="+597">+597 (Suriname)</option>
+                                <option value="+503">+503 (SV)</option>
+                                <option value="+47">+47 (Svalbard and Jan Mayen)</option>
+                                <option value="+268">+268 (Swaziland)</option>
+                                <option value="+963">+963 (Syrian Arab Republic)</option>
+                                <option value="+886">+886 (Taiwan, Province of China)</option>
+                                <option value="+255">+255 (Tanzania, United Republic of)</option>
+                                <option value="+235">+235 (TD)</option>
+                                <option value="+228">+228 (TG)</option>
+                                <option value="+66">+66 (TH)</option>
+                                <option value="+670">+670 (Timor-Leste)</option>
+                                <option value="+992">+992 (TJ)</option>
+                                <option value="+7370">+7370 (TM)</option>
+                                <option value="+216">+216 (TN)</option>
+                                <option value="+690">+690 (Tokelau)</option>
+                                <option value="+676">+676 (Tonga)</option>
+                                <option value="+90">+90 (TR)</option>
+                                <option value="+1868">+1868 (Trinidad and Tobago)</option>
+                                <option value="+1649">+1649 (Turks and Caicos Islands)</option>
+                                <option value="+688">+688 (Tuvalu)</option>
+                                <option value="+380">+380 (UA)</option>
+                                <option value="+256">+256 (UG)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+1">+1 (United States Minor Outlying Islands)</option>
+                                <option value="+1">+1 (US)</option>
+                                <option value="+598">+598 (UY)</option>
+                                <option value="+998">+998 (UZ)</option>
+                                <option value="+678">+678 (Vanuatu)</option>
+                                <option value="+58">+58 (VE)</option>
+                                <option value="+84">+84 (Viet Nam)</option>
+                                <option value="+1284">+1284 (Virgin Islands, British)</option>
+                                <option value="+1340">+1340 (Virgin Islands, U.s.)</option>
+                                <option value="+681">+681 (Wallis and Futuna)</option>
+                                <option value="+212">+212 (Western Sahara)</option>
+                                <option value="+967">+967 (YE)</option>
+                                <option value="+27">+27 (ZA)</option>
+                                <option value="+260">+260 (ZM)</option>
+                                <option value="+263">+263 (ZW)</option>
+                            </select>
+                        <input id="phone" type="tel" placeholder="123 456 789" maxlength="11" oninput="formatPhone(this)" required>
+                    </div>
+                </div>
+
+                <div class="form-group address-group">
+                    <label>Adres zamieszkania</label>
+                    <div class="form-row">
+                        <div class="form-subgroup street-col">
+                            <input id="street" type="text" placeholder="Ulica" aria-label="Ulica" maxlength="100" required>
+                        </div>
+                        <div class="form-subgroup house-col">
+                            <input id="house-number" type="text" placeholder="Nr domu / lok." aria-label="Numer domu lub lokalu" maxlength="10" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-subgroup zip-col">
+                            <input id="zip-code" type="text" placeholder="00-000" aria-label="Kod pocztowy" maxlength="6" oninput="formatZipCode(this)" required>
+                        </div>
+                        <div class="form-subgroup city-col">
+                            <input id="city" type="text" placeholder="Miasto" aria-label="Miasto" maxlength="50" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-subgroup w-full">
+                            <input id="country" type="text" value="Polska" placeholder="Kraj" aria-label="Kraj" maxlength="50" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Wybierz metodę płatności</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="blik" required>
+                            <span>BLIK (Szybka płatność mobilna)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="przelew" required>
+                            <span>Tradycyjny przelew bankowy</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="payment" value="piknik" required>
+                            <span>Płatność gotówką podczas Pikniku</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" onclick="closeModal()" class="btn-cancel">Anuluj</button>
+                    <button type="submit" class="btn-submit">Potwierdzam zakup</button>
                 </div>
             </form>
         </div>
 
-        <div id="success-message" class="hidden text-center py-8 sm:py-12 my-auto success-message">
-            <svg class="w-20 h-20 sm:w-24 sm:h-24 text-green-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <h3 class="text-2xl sm:text-3xl font-bold text-lodz-navy mb-4 uppercase">Dziękujemy!</h3>
-            <p class="text-gray-700 mb-8 text-base sm:text-lg font-medium">Twoje zgłoszenie zostało poprawnie zarejestrowane. Na podany adres e-mail wysłaliśmy dalsze instrukcje dotyczące płatności oraz voucher.</p>
-            <button type="button" onclick="closeModal()" class="bg-lodz-navy hover:bg-blue-800 text-white font-bold py-4 px-8 transition-colors uppercase tracking-wide w-full shadow-md">Zamknij</button>
+        <div id="success-message" class="hidden success-message">
+            <svg class="success-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3>Dziękujemy!</h3>
+            <p>Twoje zgłoszenie zostało poprawnie zarejestrowane. Na podany adres e-mail wysłaliśmy dalsze instrukcje dotyczące płatności oraz voucher.</p>
+            <button type="button" onclick="closeModal()" class="btn-primary full-width">Zamknij</button>
         </div>
-
     </div>
 </div>
 
