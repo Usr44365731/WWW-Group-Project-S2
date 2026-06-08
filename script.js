@@ -123,10 +123,17 @@ function formatZipCode(inputElement) {
 /**
  * Przewija stronę do stopki i aktywuje animację podświetlenia
  */
+
+let glowTimeout;
+
 function scrollToContact() {
     const footer = document.getElementById('footer');
 
     footer.scrollIntoView({ behavior: 'smooth' });
+
+    if (glowTimeout) {
+        clearTimeout(glowTimeout);
+    }
 
     footer.classList.remove('highlight-footer');
 
@@ -134,7 +141,7 @@ function scrollToContact() {
 
     footer.classList.add('highlight-footer');
 
-    setTimeout(() => {
+    glowTimeout = setTimeout(() => {
         footer.classList.remove('highlight-footer');
     }, 1500);
 }
