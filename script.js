@@ -119,3 +119,22 @@ function formatZipCode(inputElement) {
         inputElement.value = rawValue;
     }
 }
+
+/**
+ * Przewija stronę do stopki i aktywuje animację podświetlenia
+ */
+function scrollToContact() {
+    const footer = document.getElementById('footer');
+
+    footer.scrollIntoView({ behavior: 'smooth' });
+
+    footer.classList.remove('highlight-footer');
+
+    void footer.offsetWidth;
+
+    footer.classList.add('highlight-footer');
+
+    setTimeout(() => {
+        footer.classList.remove('highlight-footer');
+    }, 1500);
+}

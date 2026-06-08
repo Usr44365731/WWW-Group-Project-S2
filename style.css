@@ -878,3 +878,23 @@ body {
 .zip-col { flex: 1; }
 .city-col { flex: 2; }
 .w-full { flex: 1; width: 100%; }
+
+/* Kontakt Glow */
+@keyframes illuminate-footer {
+    0% {
+        box-shadow: inset 0 0 0 rgba(234, 88, 12, 0), 0 0 0 rgba(234, 88, 12, 0);
+        background-color: var(--navy-normal);
+    }
+    50% {
+        box-shadow: inset 0 0 40px rgba(234, 88, 12, 2), 0 0 20px rgba(234, 88, 12, 2);
+        background-color: var(--navy-light);
+    }
+    100% {
+        box-shadow: inset 0 0 0 rgba(234, 88, 12, 0), 0 0 0 rgba(234, 88, 12, 0);
+        background-color: var(--navy-normal);
+    }
+}
+
+.highlight-footer {
+    animation: illuminate-footer 1.5s ease-in-out;
+}
