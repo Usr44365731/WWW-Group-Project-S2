@@ -1,10 +1,26 @@
 {
   "name": "fachowcy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Visit issues page for some additional info!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": true
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Usr44365731/WWW-Group-Project-S2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Usr44365731/WWW-Group-Project-S2/issues"
+  },
+  "homepage": "https://github.com/Usr44365731/WWW-Group-Project-S2#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.10"
+  }
 }

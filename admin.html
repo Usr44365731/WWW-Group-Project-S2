@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administratora - Fachowcy Szkołom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body style="padding-top: 2rem;">
+
+<main class="main-content">
+  <h2 class="page-title">Panel Administratora: Spływające Zamówienia</h2>
+
+  <section id="orders-container" class="grid-2-col"></section>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', fetchOrders);
+
+  async function fetchOrders() {
+    try {
+      const response = await fetch('/api/orders');
+      const orders = await response.json();
+      const container = document.getElementById('orders-container');
+
+      if (orders.length === 0) {
+        container.innerHTML = '<p>Brak zamówień w systemie.</p>';
+        return;
+      }
+
+      orders.forEach(order => {
+        const card = document.createElement('div');
+        card.className = 'content-card';
+
+        const paymentDisplay = order.paymentMethod.toUpperCase();
+
+        card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                        <h4 style="color: var(--navy-normal); font-size: 1.25rem; font-weight: 700; margin: 0;">
+                            ${order.firstName} ${order.lastName}
+                        </h4>
+                        <span class="badge badge-primary" style="position: static;">${paymentDisplay}</span>
+                    </div>
+
+                    <div style="color: var(--gray-text); line-height: 1.6; font-size: 0.875rem;">
+                        <p><strong>Email:</strong> ${order.email}</p>
+                        <p><strong>Telefon:</strong> ${order.phone}</p>
+                        <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--gray-border);">
+                        <p><strong>Adres:</strong><br>
+                        ul. ${order.street} ${order.houseNumber}<br>
+                        ${order.zipCode} ${order.city}</p>
+                        <p style="font-size: 0.75rem; color: var(--gray-light); margin-top: 1rem;">ID Pliku: ${order.id}</p>
+                    </div>
+                `;
+        container.appendChild(card);
+      });
+    } catch (error) {
+      console.error('Błąd pobierania zamówień:', error);
+      document.getElementById('orders-container').innerHTML = '<p style="color: red;">Nie udało się załadować zamówień.</p>';
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -74,11 +74,42 @@ function handleBackdropClick(event) {
     }
 }
 
-function submitForm(event) {
-    // Przerywa domyślną akcję wysyłania formularza, np. przeładowanie strony
+/**
+ * Zmodyfikowana funkcja submitForm komunikująca się z lokalnym serwerem Node.js
+ */
+async function submitForm(event) {
     event.preventDefault();
-    document.getElementById('purchase-form-container').classList.add('hidden');
-    document.getElementById('success-message').classList.remove('hidden');
+
+    const formData = {
+        firstName: document.getElementById('firstName').value,
+        lastName: document.getElementById('lastName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone-prefix').value + ' ' + document.getElementById('phone').value,
+        street: document.getElementById('street').value,
+        houseNumber: document.getElementById('house-number').value,
+        zipCode: document.getElementById('zip-code').value,
+        city: document.getElementById('city').value,
+        paymentMethod: document.querySelector('input[name="payment"]:checked').value
+    };
+
+    try {
+        const response = await fetch('/api/purchase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            document.getElementById('purchase-form-container').classList.add('hidden');
+            document.getElementById('success-message').classList.remove('hidden');
+        } else {
+            console.error('Błąd zapisu na serwerze.');
+        }
+    } catch (error) {
+        console.error('Błąd połączenia:', error);
+    }
 }
 
 /**
